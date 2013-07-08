@@ -2,6 +2,8 @@ YouTube-Starter-App
 ===================
 A template application showing how to get started using the QVSouce YouTube Connector for QlikView.
 
+The content below is copied from the change log in the first tab of the load script.
+
 1.5.1 - 08/07/12
 ----------------
 * Added change log.
