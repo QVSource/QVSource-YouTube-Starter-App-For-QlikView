@@ -1,0 +1,309 @@
+﻿///$tab Change Log
+/*
+1.5.1 - 08/07/12
+----------------
+* Added change log.
+* Moved to YouTube Connector V2 (some column nane changes).
+* Config now in separate Config.txt file.
+* Moved to QVX format.
+* Moved script into separate tabs/functions.
+* Commented out keywords table for the time being as the value always appears to be empty in the API response (<media:keywords/>)
+* Added check that QVSource is running.
+* Added appId parameter to calls.
+* Added to GitHub.
+
+TODO
+----
+* Accumulate results into QVD file(s).
+* Download comments using the new Async feature (http://www.qvsource.com/wiki/Synchronous-Asynchronous-And-Batch-Requests-Explained.ashx).
+* Add sentimnent analysis.
+* Add automatic pagination through blocks of insights results (because you can currently only specify a single time span of no more than 31 days).
+* Add Channel Insights tables.
+*/
+///$tab Check QVSource
+sub CheckQVSourceStatus
+ 
+    set errormode = 0;
+     
+    QVSourceStatus:
+    LOAD Version,
+        SubField(Version, '.', 1) as Version_Major,
+        SubField(Version, '.', 2) as Version_Minor,
+        SubField(Version, '.', 3) as Version_Build,
+        SubField(Version, '.', 4) as Version_Revision,
+        ServerMode,
+        Path,
+        Licensed,
+        LicenceExpires,
+        IsLicensedAsServer
+    FROM [http://localhost:5555/QVSource?format=xml] (XmlSimple, Table is [QVSource]);
+          
+    if(ScriptError <> '') then   
+        //
+        // Looks like QVSOurce is not even running.
+        //
+        // Log message here or send email using QVSource Notifier Connector
+        //
+        trace 'QVSource is not running or not running on the requested port number.';
+        exit script;
+    endif     
+      
+    if(peek('Licensed', 0, 'QVSourceStatus') <> 'true') then
+        //
+        // QVSource is running but not licensed.
+        //
+        // Log message here or send email using QVSource Notifier Connector
+        //
+        trace 'QVSource is running but not licensed.';
+        exit script;
+    endif
+ 
+    if(peek('ServerMode', 0, 'QVSourceStatus') = 'true' and peek('IsLicensedAsServer', 0, 'QVSourceStatus') = 'false') then
+        //
+        // QVSource is running but not licensed to run in server mode.
+        //
+        // Log message here or send email using QVSource Notifier Connector
+        //
+        trace 'QVSource is running but not licensed to run in server mode.';
+        exit script;
+    endif     
+     
+    let currentVersionAsInt = (peek('Version_Major', 0, 'QVSourceStatus') * 1000) + (peek('Version_Minor', 0, 'QVSourceStatus') * 100) + (peek('Version_Build', 0, 'QVSourceStatus') * 10) + peek('Version_Revision', 0, 'QVSourceStatus');
+ 
+    // Let's pretend we need QVSource 1.4.2.6 or later....  
+    if(currentVersionAsInt < 1461) then
+        // Log message here or send email using QVSource Notifier Connector
+        trace 'Version too low. Please update QVSource.';
+        exit script;
+    endif
+     
+    QVSourceConnectorStatus:
+    LOAD Name as ConnectorName,
+        Version as ConnectorVersion,
+        Licensed as ConnectorLicensed
+    FROM [http://localhost:5555/QVSource?format=xml] (XmlSimple, Table is [QVSource/Connectors/Connector]);
+     
+    //
+    // Run other QVSource or connector specific tests here before deciding whether
+    // to proceed and load the rest of the application.
+    //
+     
+    set errormode = 1;
+ 
+endsub
+ 
+call CheckQVSourceStatus;
+///$tab Config
+SET ThousandSep=',';
+SET DecimalSep='.';
+SET MoneyThousandSep=',';
+SET MoneyDecimalSep='.';
+SET MoneyFormat='£#,##0.00;-£#,##0.00';
+SET TimeFormat='hh:mm:ss';
+SET DateFormat='DD/MM/YYYY';
+SET TimestampFormat='DD/MM/YYYY hh:mm:ss[.fff]';
+SET MonthNames='Jan;Feb;Mar;Apr;May;Jun;Jul;Aug;Sep;Oct;Nov;Dec';
+SET DayNames='Mon;Tue;Wed;Thu;Fri;Sat;Sun';
+
+set ErrorMode=0;
+
+$(include=config.txt);
+///$tab Search
+sub runSearches
+	
+	LET noRows = NoOfRows('YouTubeSearchTerms');
+	
+	for i=0 to $(noRows)-1 // loop through every row
+	
+		let youtubeSearchTerm = peek('YouTubeSearchTerm',$(i),'YouTubeSearchTerms');
+	
+		YouTubeConnector_Search:
+		LOAD
+		    '$(youtubeSearchTerm)' as YouTubeSearchTerm,
+			id as Search_id,
+			right(id, 11) as videoId,
+			published as Search_published,
+			date#(left(published, 10) & mid(published, 12, 8), 'YYYY-MM-DDhh:mm:ss') as Search_published_qvdatetime,
+			date#(left(published, 10), 'YYYY-MM-DD') as Search_published_qvdate,
+			updated as Search_updated,
+			date#(left(updated, 10) & mid(updated, 12, 8), 'YYYY-MM-DDhh:mm:ss') as Search_updated_qvdatetime,
+			date#(left(updated, 10), 'YYYY-MM-DD') as Search_updated_qvdate,
+			title as Search_title,
+			media_descritption as Search_media_descritption,
+			author_name as Search_author_name,
+			author_uri as Search_author_uri,
+			comments_counthint as Search_comments_counthint,
+			rating_average as Search_rating_average,
+			rating_max as Search_rating_max,
+			rating_min as Search_rating_min,
+			rating_numRaters as Search_rating_numRaters,
+			statistics_favoriteCount as Search_statistics_favoriteCount,
+			statistics_viewCount as Search_statistics_viewCount,
+			rating_numDislikes as Search_rating_numDislikes,
+			rating_numLikes as Search_rating_numLikes,
+			media_category as Search_media_category,
+			duration as Search_duration,
+			aspectRatio as Search_aspectRatio,
+			media_keywords as Search_media_keywords,
+			media_credit as Search_media_credit,
+			media_credit_display as Search_media_credit_display
+		FROM
+		[http://localhost:5555/QVSource/YouTubeConnectorV2/?table=Search&SearchTerm=$(youtubeSearchTerm)&AdditionalQuery=&appID=$(vQVSourceAppId)&format=qvx]
+		(qvx);
+		
+	NEXT
+	
+//  Commented out for the time being as the value always appears to be empty in the API response (<media:keywords/>)
+//	//Split all the keywords and capitalise them so that Example would be treated the same as eXaMplE
+//	YouTubeKeyWords:
+//	LOAD
+//	    Search_id,
+//	    trim(subfield(Search_media_keywords, ',')) as YouTubeKeyWord
+//	Resident YouTubeConnector_Search;
+	
+	LET noRows = NoOfRows('YouTubeConnector_Search'); // get the total number of rows in the table
+	   
+	for i=0 to $(noRows)-1 // loop through every row
+	
+		let textRaw = peek('videoId',$(i),'YouTubeConnector_Search'); // get the value for "text" field on each row
+	
+		YouTubeConnector_Comments:
+		LOAD
+			'$(textRaw)' as videoId,
+			id as Comments_id,
+			published as Comments_published,
+			date#(left(published, 10) & mid(published, 12, 8), 'YYYY-MM-DDhh:mm:ss') as Comments_published_qvdatetime,
+			date#(left(published, 10), 'YYYY-MM-DD') as Comments_published_qvdate,
+			updated as Comments_updated,
+			date#(left(updated, 10) & mid(updated, 12, 8), 'YYYY-MM-DDhh:mm:ss') as Comments_updated_qvdatetime,
+			date#(left(updated, 10), 'YYYY-MM-DD') as Comments_updated_qvdate,
+			title as Comments_title,
+			title_urlEncoded as Comments_title_urlEncoded,
+			content as Comments_content,
+			content_urlEncoded as Comments_content_urlEncoded,
+			author_name as Comments_author_name,
+			author_uri as Comments_author_uri
+		FROM
+		[http://localhost:5555/QVSource/YouTubeConnectorV2/?table=Comments&VideoId=$(textRaw)&appID=$(vQVSourceAppId)&AdditionalQuery=&format=qvx]
+		(qvx);
+	
+	Next
+
+endsub
+///$tab Insights
+sub runInsights
+
+	YouTubeConnector_UserVideos:
+	LOAD
+		id as UserVideos_id,
+		videoId as UserVideos_videoId,
+		published as UserVideos_published,
+		date#(mid(published, 10) & mid(published, 12, 8), 'YYYY-MM-DDhh:mm:ss') as UserVideos_published_qvdatetime,
+		date#(mid(published, 10), 'YYYY-MM-DD') as UserVideos_published_qvdate,
+		updated as UserVideos_updated,
+		date#(mid(updated, 10) & mid(updated, 12, 8), 'YYYY-MM-DDhh:mm:ss') as UserVideos_updated_qvdatetime,
+		date#(mid(updated, 10), 'YYYY-MM-DD') as UserVideos_updated_qvdate,
+		title as UserVideos_title,
+		media_descritption as UserVideos_media_descritption,
+		author_name as UserVideos_author_name,
+		author_uri as UserVideos_author_uri,
+		comments_counthint as UserVideos_comments_counthint,
+		rating_average as UserVideos_rating_average,
+		rating_max as UserVideos_rating_max,
+		rating_min as UserVideos_rating_min,
+		rating_numRaters as UserVideos_rating_numRaters,
+		statistics_favoriteCount as UserVideos_statistics_favoriteCount,
+		statistics_viewCount as UserVideos_statistics_viewCount,
+		rating_numDislikes as UserVideos_rating_numDislikes,
+		rating_numLikes as UserVideos_rating_numLikes,
+		media_category as UserVideos_media_category,
+		duration as UserVideos_duration,
+		aspectRatio as UserVideos_aspectRatio,
+		media_keywords as UserVideos_media_keywords,
+		media_credit as UserVideos_media_credit,
+		media_credit_display as UserVideos_media_credit_display
+	FROM
+	[http://localhost:5555/QVSource/YouTubeConnectorV2/?table=UserVideos&appID=$(vQVSourceAppId)&format=qvx]
+	(qvx);
+		
+	LET noRows = NoOfRows('YouTubeConnector_UserVideos'); // get the total number of rows in the table
+	   
+	for i=0 to $(noRows)-1 // loop through every row
+	
+		let videoId = peek('UserVideos_videoId',$(i),'YouTubeConnector_UserVideos'); // get the value for "text" field on each row
+		
+		YouTubeConnector_Insights_world_locations:
+		LOAD
+			'$(videoId)' as UserVideos_videoId,
+			Date as Insights_world_locations_Date,
+			Region as Insights_world_locations_Region,
+			VideoID as Insights_world_locations_VideoID,
+			Title as Insights_world_locations_Title,
+			[Player location] as [Insights_world_locations_Player location],
+			Detail as Insights_world_locations_Detail,
+			Views as Insights_world_locations_Views
+		FROM
+		[http://localhost:5555/QVSource/YouTubeConnectorV2/?table=Insights_world_locations&appID=$(vQVSourceAppId)&VideoId=$(videoId)&StartDate=$(vInsightsStartDate)&EndDate=$(vInsightsEndDate)&format=qvx]
+		(qvx);
+		
+		
+		YouTubeConnector_Insights_world_referrers:
+		LOAD
+			'$(videoId)' as UserVideos_videoId,
+			Date as Insights_world_referrers_Date,
+			Region as Insights_world_referrers_Region,
+			VideoID as Insights_world_referrers_VideoID,
+			Title as Insights_world_referrers_Title,
+			[Source type] as [Insights_world_referrers_Source type],
+			Detail as Insights_world_referrers_Detail,
+			[Referred views] as [Insights_world_referrers_Referred views]
+		FROM
+		[http://localhost:5555/QVSource/YouTubeConnectorV2/?table=Insights_world_referrers&appID=$(vQVSourceAppId)&VideoId=$(videoId)&StartDate=$(vInsightsStartDate)&EndDate=$(vInsightsEndDate)&format=qvx]
+		(qvx);
+
+		YouTubeConnector_Insights_world_views:
+		LOAD
+			'$(videoId)' as UserVideos_videoId,
+			Date as Insights_world_views_Date,
+			Region as Insights_world_views_Region,
+			VideoID as Insights_world_views_VideoID,
+			Title as Insights_world_views_Title,
+			Views as Insights_world_views_Views,
+			[Unique users] as [Insights_world_views_Unique users],
+			[Unique users (7 days)] as [Insights_world_views_Unique users (7 days)],
+			[Unique users (30 days)] as [Insights_world_views_Unique users (30 days)],
+			Popularity as Insights_world_views_Popularity,
+			Comments as Insights_world_views_Comments,
+			Favorites as Insights_world_views_Favorites,
+			[Rating 1] as [Insights_world_views_Rating 1],
+			[Rating 2] as [Insights_world_views_Rating 2],
+			[Rating 3] as [Insights_world_views_Rating 3],
+			[Rating 4] as [Insights_world_views_Rating 4],
+			[Rating 5] as [Insights_world_views_Rating 5]
+		FROM
+		[http://localhost:5555/QVSource/YouTubeConnectorV2/?table=Insights_world_views&appID=$(vQVSourceAppId)&VideoId=$(videoId)&StartDate=$(vInsightsStartDate)&EndDate=$(vInsightsEndDate)&format=qvx]
+		(qvx);
+
+		YouTubeConnector_Insights_demographics:
+		LOAD
+			'$(videoId)' as UserVideos_videoId,
+			VideoID as Insights_demographics_VideoID,
+			Title as Insights_demographics_Title,
+			Gender as Insights_demographics_Gender,
+			[Age group] as [Insights_demographics_Age group],
+			Percentage as Insights_demographics_Percentage
+		FROM
+		[http://localhost:5555/QVSource/YouTubeConnectorV2/?table=Insights_demographics&appID=$(vQVSourceAppId)&VideoId=$(videoId)&format=qvx]
+		(qvx);
+
+	next
+
+endsub
+///$tab Main
+if($(vRunSearches) = 1) then
+	call runSearches;
+endif
+
+if($(vGetInsightsData) = 1) then
+	call runInsights;
+endif

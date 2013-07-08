@@ -1,0 +1,41 @@
+//
+// To get Insights data, set to 1
+// NOTE: In order to do this you must have sufficient permissions on the 
+// videos you are accessing to get this data.
+//
+Let vGetInsightsData = 1;
+Let vRunSearches = 1;
+
+// You can set this to your own app name.
+let vQVSourceAppId = 'YouTube_Demo_App';
+
+//
+// Date range for the Insights data
+// IMPORTANT - This date range should be no more than 31 days and no earlier than 1st March 2009
+// This script should be modified to loop through blocks of date ranges in a future version.
+//
+//Let vInsightsStartDate = "25-12-2011";
+//Let vInsightsEndDate = "25-01-2012";
+//
+// TODO: Move to using an offset from the current date (as illustrated below)
+// rather than hard coded dates as shown above.
+//
+let vTemp = Date(timestamp(now(1)) - 30);
+Let vInsightsStartDate = date(vTemp, 'DD-MM-YYYY');
+
+let vTemp = Date(timestamp(now(1)) - 1);
+Let vInsightsEndDate = date(vTemp, 'DD-MM-YYYY');
+
+// let vDateToGetDataFromOnFirstReload= date(vTemp, 'YYYY-MM-DD');
+// 
+
+// 
+// Enter a list of search terms and grouping tags
+// in the inline table below.
+//
+YouTubeSearchTerms:
+LOAD * INLINE [
+SearchTag, YouTubeSearchTerm
+QlikView, qvexcel
+QlikView, QlikView
+];
