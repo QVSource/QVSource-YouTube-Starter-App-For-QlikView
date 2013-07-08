@@ -1,4 +1,4 @@
-YouTube-Starter-App
+YouTube Starter App
 ===================
 A template application showing how to get started using the [QVSouce YouTube Connector](http://www.qvsource.com/wiki/YouTube-Connector-For-QlikView.ashx) for QlikView. 
 
@@ -20,6 +20,7 @@ The content below is copied from the change log in the first tab of the load scr
 
 TODO
 ----
+Some ideas which would improve this application.
 * Accumulate results into QVD file(s).
 * Download comments using the new Async feature (http://www.qvsource.com/wiki/Synchronous-Asynchronous-And-Batch-Requests-Explained.ashx).
 * Add sentimnent analysis.
