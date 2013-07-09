@@ -6,7 +6,7 @@ If you are a QlikView + QVSource user you can simply click the ["Download ZIP"] 
 
 The content below is copied from the change log in the first tab of the load script.
 
-1.5.1 - 08/07/12
+1.5.1 - 08/07/13
 ----------------
 * Added change log.
 * Moved to YouTube Connector V2 (some column nane changes).
