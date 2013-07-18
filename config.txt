@@ -39,3 +39,4 @@ SearchTag, YouTubeSearchTerm
 QlikView, qvexcel
 QlikView, QlikView
 ];
+
