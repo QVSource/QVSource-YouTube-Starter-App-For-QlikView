@@ -2,6 +2,8 @@ YouTube Starter App
 ===================
 This is a starter QlikView application showing how to get started using the [QVSource YouTube Connector](http://www.qvsource.com/wiki/YouTube-Connector-For-QlikView.ashx) for QlikView. 
 
+Full documentation for this starter application can be found [here](http://wiki.qvsource.com/YouTube-Connector-For-QlikView-Demo.ashx).
+
 If you are a QlikView + QVSource user you can simply click the ["Download ZIP"] (https://github.com/QVSource/QVSource-YouTube-Starter-App-For-QlikView/archive/master.zip) button on GitHub to grab this application.
 
 The content below is copied from the change log in the first tab of the load script.
