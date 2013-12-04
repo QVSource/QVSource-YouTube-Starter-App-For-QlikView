@@ -1,4 +1,4 @@
-﻿<!-- Last project change: 2013-07-08 13:38:41 (2013-07-08 11:38:41) -->
+﻿<!-- Last project change: 2013-12-04 13:01:48 (2013-12-04 12:01:48) -->
 <PrjQlikViewProject>
   <GLOBAL>
     <AllPropertiesFileName>AllProperties.xml</AllPropertiesFileName>
@@ -21,23 +21,6 @@
             <Top>484</Top>
             <Width>1391</Width>
             <Height>297</Height>
-          </Rect>
-          <MinimizedRect>
-            <Left>0</Left>
-            <Top>0</Top>
-            <Width>297</Width>
-            <Height>102</Height>
-          </MinimizedRect>
-          <ShowMode>1</ShowMode>
-          <ZedLevel>-1</ZedLevel>
-        </PrjFrameParentDef>
-        <PrjFrameParentDef>
-          <ObjectId>Document\TX13</ObjectId>
-          <Rect>
-            <Left>1681</Left>
-            <Top>38</Top>
-            <Width>944</Width>
-            <Height>353</Height>
           </Rect>
           <MinimizedRect>
             <Left>0</Left>
@@ -89,6 +72,23 @@
             <Top>31</Top>
             <Width>188</Width>
             <Height>188</Height>
+          </Rect>
+          <MinimizedRect>
+            <Left>0</Left>
+            <Top>0</Top>
+            <Width>297</Width>
+            <Height>102</Height>
+          </MinimizedRect>
+          <ShowMode>1</ShowMode>
+          <ZedLevel>-1</ZedLevel>
+        </PrjFrameParentDef>
+        <PrjFrameParentDef>
+          <ObjectId>Document\TX17_358592228</ObjectId>
+          <Rect>
+            <Left>1713</Left>
+            <Top>50</Top>
+            <Width>941</Width>
+            <Height>238</Height>
           </Rect>
           <MinimizedRect>
             <Left>0</Left>
