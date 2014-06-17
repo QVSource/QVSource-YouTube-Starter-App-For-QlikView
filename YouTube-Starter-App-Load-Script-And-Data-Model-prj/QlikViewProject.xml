@@ -1,4 +1,4 @@
-﻿<!-- Last project change: 2013-12-04 13:01:48 (2013-12-04 12:01:48) -->
+﻿<!-- Last project change: 2014-06-17 14:01:42 (2014-06-17 12:01:42) -->
 <PrjQlikViewProject>
   <GLOBAL>
     <AllPropertiesFileName>AllProperties.xml</AllPropertiesFileName>
@@ -12,7 +12,7 @@
   <SHEETS>
     <PrjSheetProperties>
       <SheetId>Document\SH04</SheetId>
-      <IsActive>true</IsActive>
+      <IsActive>false</IsActive>
       <ChildObjects>
         <PrjFrameParentDef>
           <ObjectId>Document\TX14</ObjectId>
@@ -103,7 +103,7 @@
     </PrjSheetProperties>
     <PrjSheetProperties>
       <SheetId>Document\SH01</SheetId>
-      <IsActive>false</IsActive>
+      <IsActive>true</IsActive>
       <ChildObjects>
         <PrjFrameParentDef>
           <ObjectId>Document\TX03</ObjectId>
@@ -140,12 +140,12 @@
           <ZedLevel>-1</ZedLevel>
         </PrjFrameParentDef>
         <PrjFrameParentDef>
-          <ObjectId>Document\TX04</ObjectId>
+          <ObjectId>Document\TX18_335363649</ObjectId>
           <Rect>
-            <Left>3606</Left>
-            <Top>31</Top>
-            <Width>944</Width>
-            <Height>353</Height>
+            <Left>3588</Left>
+            <Top>53</Top>
+            <Width>941</Width>
+            <Height>238</Height>
           </Rect>
           <MinimizedRect>
             <Left>0</Left>
@@ -193,9 +193,9 @@
         <PrjFrameParentDef>
           <ObjectId>Document\LB174</ObjectId>
           <Rect>
-            <Left>2009</Left>
+            <Left>2019</Left>
             <Top>31</Top>
-            <Width>453</Width>
+            <Width>444</Width>
             <Height>363</Height>
           </Rect>
           <MinimizedRect>
@@ -418,12 +418,12 @@
           <ZedLevel>-1</ZedLevel>
         </PrjFrameParentDef>
         <PrjFrameParentDef>
-          <ObjectId>Document\TX05</ObjectId>
+          <ObjectId>Document\TX19_361651953</ObjectId>
           <Rect>
-            <Left>3606</Left>
-            <Top>31</Top>
-            <Width>944</Width>
-            <Height>353</Height>
+            <Left>3588</Left>
+            <Top>53</Top>
+            <Width>941</Width>
+            <Height>238</Height>
           </Rect>
           <MinimizedRect>
             <Left>0</Left>
@@ -611,12 +611,12 @@
           <ZedLevel>-1</ZedLevel>
         </PrjFrameParentDef>
         <PrjFrameParentDef>
-          <ObjectId>Document\TX09</ObjectId>
+          <ObjectId>Document\TX20_908996701</ObjectId>
           <Rect>
-            <Left>1797</Left>
-            <Top>0</Top>
-            <Width>944</Width>
-            <Height>353</Height>
+            <Left>1909</Left>
+            <Top>72</Top>
+            <Width>941</Width>
+            <Height>238</Height>
           </Rect>
           <MinimizedRect>
             <Left>0</Left>

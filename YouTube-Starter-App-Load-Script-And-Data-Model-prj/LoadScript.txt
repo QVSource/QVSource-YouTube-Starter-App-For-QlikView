@@ -1,5 +1,14 @@
 ﻿///$tab Change Log
 /*
+1.5.3 - 17/06/14
+----------------
+* Changed the keyword listbox on the Summary tab (which was empty) to show YouTube search term.
+* Changed Search_uploaded_qvdate (which no longer existed) to Search_published_qvdate on chart 'Number of uploaded Videos over time'.
+* Changed count(Comments_published_qvdate) to count(Comments_id) on chart 'Volume of Comments'.
+* Changed Count(Insights_world_locations_Date) to Sum(Insights_world_locations_Views) on object now called 'World Location Views'.
+* Dimension for Video Lengths charts changed to '=floor(Search_duration/60)' and changed expression to 'sum(Search_statistics_viewCount)'.
+* Updated remaining badges.
+
 1.5.2 - 04/12/12
 ----------------
 * Updated badge.

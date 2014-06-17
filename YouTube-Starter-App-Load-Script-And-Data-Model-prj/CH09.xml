@@ -213,13 +213,14 @@
       <v>Volume of Comments</v>
     </WindowTitle>
     <GraphMode>GRAPH_MODE_BAR</GraphMode>
+    <TotalString></TotalString>
     <ErrorMessageOverrides></ErrorMessageOverrides>
     <MiniChartLook>false</MiniChartLook>
   </GraphLayout>
   <_ExpressionDatas>
     <ExpressionData>
       <Definition>
-        <v>count(Comments_published_qvdate)</v>
+        <v>count(Comments_id)</v>
       </Definition>
       <Enable>true</Enable>
       <Present>false</Present>
@@ -1052,7 +1053,6 @@
     <SheetPrintDrawBackGround>false</SheetPrintDrawBackGround>
     <StrDevModeExtra></StrDevModeExtra>
   </PrintSettings>
-  <ActivePropertyPage>1</ActivePropertyPage>
   <DoctorSpecial>0</DoctorSpecial>
   <DoctorMapField></DoctorMapField>
   <Detached>false</Detached>
@@ -2071,6 +2071,7 @@
     <DynamicImage></DynamicImage>
     <TrellisProperties></TrellisProperties>
     <MekkoChartMode>MEKKOCHART_NORMALIZED</MekkoChartMode>
+    <TruncateLabel>true</TruncateLabel>
   </ChartProperties>
   <TableProperties>
     <VerticalLabels>false</VerticalLabels>
@@ -2502,7 +2503,7 @@
           <InternalId>-1</InternalId>
           <ExpressionData>
             <Definition>
-              <v>count(Comments_published_qvdate)</v>
+              <v>count(Comments_id)</v>
             </Definition>
             <Enable>true</Enable>
             <Present>false</Present>

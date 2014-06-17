@@ -213,13 +213,16 @@
       <v>Locations (Areas based on date)</v>
     </WindowTitle>
     <GraphMode>GRAPH_MODE_BLOCK</GraphMode>
+    <TotalString></TotalString>
     <ErrorMessageOverrides></ErrorMessageOverrides>
     <MiniChartLook>false</MiniChartLook>
   </GraphLayout>
   <_ExpressionDatas>
     <ExpressionData>
       <Definition>
-        <v>Count(Insights_world_referrers_Date)</v>
+        <v>
+
+Count(Insights_world_referrers_Date)</v>
       </Definition>
       <Enable>true</Enable>
       <Present>false</Present>
@@ -944,7 +947,9 @@
         <OtherCounted>
           <v>11</v>
         </OtherCounted>
-        <OtherLimit></OtherLimit>
+        <OtherLimit>
+          <v>0.05</v>
+        </OtherLimit>
         <OtherLimitMode>OTHER_GT_LIMIT</OtherLimitMode>
         <SuppressOther>false</SuppressOther>
         <ForceBadValueKeeping>true</ForceBadValueKeeping>
@@ -1050,7 +1055,6 @@
     <SheetPrintDrawBackGround>false</SheetPrintDrawBackGround>
     <StrDevModeExtra></StrDevModeExtra>
   </PrintSettings>
-  <ActivePropertyPage>2</ActivePropertyPage>
   <DoctorSpecial>0</DoctorSpecial>
   <DoctorMapField></DoctorMapField>
   <Detached>false</Detached>
@@ -2069,6 +2073,7 @@
     <DynamicImage></DynamicImage>
     <TrellisProperties></TrellisProperties>
     <MekkoChartMode>MEKKOCHART_NORMALIZED</MekkoChartMode>
+    <TruncateLabel>true</TruncateLabel>
   </ChartProperties>
   <TableProperties>
     <VerticalLabels>false</VerticalLabels>
@@ -2500,7 +2505,9 @@
           <InternalId>-1</InternalId>
           <ExpressionData>
             <Definition>
-              <v>Count(Insights_world_referrers_Date)</v>
+              <v>
+
+Count(Insights_world_referrers_Date)</v>
             </Definition>
             <Enable>true</Enable>
             <Present>false</Present>

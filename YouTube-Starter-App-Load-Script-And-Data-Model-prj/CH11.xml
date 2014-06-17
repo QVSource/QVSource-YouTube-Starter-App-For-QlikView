@@ -38,7 +38,7 @@
         <DropShadow>false</DropShadow>
       </CaptionFont>
       <Name>
-        <v>Locations (Areas based on date)</v>
+        <v>World Location Views</v>
       </Name>
       <Bmp enctype="base64"></Bmp>
       <BmpMode>0</BmpMode>
@@ -210,16 +210,18 @@
     <ReadOnly>false</ReadOnly>
     <FastChange></FastChange>
     <WindowTitle>
-      <v>Locations (Areas based on date)</v>
+      <v>World Location Views</v>
     </WindowTitle>
     <GraphMode>GRAPH_MODE_BLOCK</GraphMode>
+    <TotalString></TotalString>
     <ErrorMessageOverrides></ErrorMessageOverrides>
     <MiniChartLook>false</MiniChartLook>
   </GraphLayout>
   <_ExpressionDatas>
     <ExpressionData>
       <Definition>
-        <v>Count(Insights_world_locations_Date)</v>
+        <v>Sum(Insights_world_locations_Views)
+</v>
       </Definition>
       <Enable>true</Enable>
       <Present>false</Present>
@@ -1042,7 +1044,6 @@
     <SheetPrintDrawBackGround>false</SheetPrintDrawBackGround>
     <StrDevModeExtra></StrDevModeExtra>
   </PrintSettings>
-  <ActivePropertyPage>0</ActivePropertyPage>
   <DoctorSpecial>0</DoctorSpecial>
   <DoctorMapField></DoctorMapField>
   <Detached>false</Detached>
@@ -2061,6 +2062,7 @@
     <DynamicImage></DynamicImage>
     <TrellisProperties></TrellisProperties>
     <MekkoChartMode>MEKKOCHART_NORMALIZED</MekkoChartMode>
+    <TruncateLabel>true</TruncateLabel>
   </ChartProperties>
   <TableProperties>
     <VerticalLabels>false</VerticalLabels>
@@ -2492,7 +2494,8 @@
           <InternalId>-1</InternalId>
           <ExpressionData>
             <Definition>
-              <v>Count(Insights_world_locations_Date)</v>
+              <v>Sum(Insights_world_locations_Views)
+</v>
             </Definition>
             <Enable>true</Enable>
             <Present>false</Present>

@@ -213,13 +213,15 @@
       <v>Video Lengths</v>
     </WindowTitle>
     <GraphMode>GRAPH_MODE_BAR</GraphMode>
+    <TotalString></TotalString>
     <ErrorMessageOverrides></ErrorMessageOverrides>
     <MiniChartLook>false</MiniChartLook>
   </GraphLayout>
   <_ExpressionDatas>
     <ExpressionData>
       <Definition>
-        <v>Count(Search_duration)</v>
+        <v>sum(Search_statistics_viewCount)
+// Count(Search_duration)</v>
       </Definition>
       <Enable>true</Enable>
       <Present>false</Present>
@@ -623,8 +625,8 @@
   <Dimensions>
     <ChartDimensionDataDef>
       <PseudoDef>
-        <Name>Search_duration</Name>
-        <Type>PRESENT</Type>
+        <Name>=floor(Search_duration/60)</Name>
+        <Type>IS_EXPR</Type>
       </PseudoDef>
       <Title>
         <v>Seconds</v>
@@ -895,7 +897,6 @@
     <SheetPrintDrawBackGround>false</SheetPrintDrawBackGround>
     <StrDevModeExtra></StrDevModeExtra>
   </PrintSettings>
-  <ActivePropertyPage>5</ActivePropertyPage>
   <DoctorSpecial>0</DoctorSpecial>
   <DoctorMapField></DoctorMapField>
   <Detached>false</Detached>
@@ -1914,6 +1915,7 @@
     <DynamicImage></DynamicImage>
     <TrellisProperties></TrellisProperties>
     <MekkoChartMode>MEKKOCHART_NORMALIZED</MekkoChartMode>
+    <TruncateLabel>true</TruncateLabel>
   </ChartProperties>
   <TableProperties>
     <VerticalLabels>false</VerticalLabels>
@@ -2448,7 +2450,7 @@
       <ExpansionData>
         <ExcludeList>false</ExcludeList>
         <Pos>
-          <DimName>Search_duration</DimName>
+          <DimName>=floor(Search_duration/60)</DimName>
           <ElemNo></ElemNo>
           <ElemValues></ElemValues>
         </Pos>
@@ -2465,7 +2467,8 @@
           <InternalId>-1</InternalId>
           <ExpressionData>
             <Definition>
-              <v>Count(Search_duration)</v>
+              <v>sum(Search_statistics_viewCount)
+// Count(Search_duration)</v>
             </Definition>
             <Enable>true</Enable>
             <Present>false</Present>
