@@ -208,7 +208,7 @@
       <StateName></StateName>
     </Frame>
     <ReadOnly>false</ReadOnly>
-    <NumAdjust>0</NumAdjust>
+    <NumAdjust>2</NumAdjust>
     <TextAdjust>0</TextAdjust>
     <MultiLine>0</MultiLine>
     <ShowFrequency>true</ShowFrequency>
@@ -246,10 +246,11 @@
     <SuppressSearchHighlight>false</SuppressSearchHighlight>
     <TextColor></TextColor>
     <PreferredTextSearchMode>TEXT_SEARCH_NORMAL</PreferredTextSearchMode>
+    <CellBorders>false</CellBorders>
   </Layout>
   <Def>
-    <Name>YouTubeKeyWord</Name>
-    <Type>NOT_PRESENT</Type>
+    <Name>YouTubeSearchTerm</Name>
+    <Type>PRESENT</Type>
   </Def>
   <Title>
     <v>Keyword</v>
@@ -344,9 +345,9 @@
     <StrDevModeExtra></StrDevModeExtra>
   </PrintSettings>
   <SortCriteria>
-    <SortByState>0</SortByState>
-    <SortByFrequency>1</SortByFrequency>
-    <SortByNumeric>1</SortByNumeric>
+    <SortByState>1</SortByState>
+    <SortByFrequency>0</SortByFrequency>
+    <SortByNumeric>0</SortByNumeric>
     <SortByAscii>1</SortByAscii>
     <SortByLoadOrder>0</SortByLoadOrder>
     <SortByExpression>0</SortByExpression>

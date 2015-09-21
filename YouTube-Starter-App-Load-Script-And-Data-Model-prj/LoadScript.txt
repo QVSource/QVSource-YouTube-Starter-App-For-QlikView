@@ -1,5 +1,11 @@
 ﻿///$tab Change Log
 /*
+
+1.6.0 - 21/09/15
+----------------
+* Updated to use Connector V3.
+* Note some data is no longer supported so some tables/columns have been removed.
+
 1.5.3 - 17/06/14
 ----------------
 * Changed the keyword listbox on the Summary tab (which was empty) to show YouTube search term.
@@ -25,13 +31,6 @@
 * Added appId parameter to calls.
 * Added to GitHub.
 
-TODO
-----
-* Accumulate results into QVD file(s).
-* Download comments using the new Async feature (http://www.qvsource.com/wiki/Synchronous-Asynchronous-And-Batch-Requests-Explained.ashx).
-* Add sentimnent analysis.
-* Add automatic pagination through blocks of insights results (because you can currently only specify a single time span of no more than 31 days).
-* Add Channel Insights tables.
 */
 ///$tab Check QVSource
 sub CheckQVSourceStatus
@@ -129,194 +128,90 @@ sub runSearches
 	for i=0 to $(noRows)-1 // loop through every row
 	
 		let youtubeSearchTerm = peek('YouTubeSearchTerm',$(i),'YouTubeSearchTerms');
-	
+		
 		YouTubeConnector_Search:
 		LOAD
-		    '$(youtubeSearchTerm)' as YouTubeSearchTerm,
-			id as Search_id,
-			right(id, 11) as videoId,
-			published as Search_published,
-			date#(left(published, 10) & mid(published, 12, 8), 'YYYY-MM-DDhh:mm:ss') as Search_published_qvdatetime,
-			date#(left(published, 10), 'YYYY-MM-DD') as Search_published_qvdate,
-			updated as Search_updated,
-			date#(left(updated, 10) & mid(updated, 12, 8), 'YYYY-MM-DDhh:mm:ss') as Search_updated_qvdatetime,
-			date#(left(updated, 10), 'YYYY-MM-DD') as Search_updated_qvdate,
-			title as Search_title,
-			media_descritption as Search_media_descritption,
-			author_name as Search_author_name,
-			author_uri as Search_author_uri,
-			comments_counthint as Search_comments_counthint,
-			rating_average as Search_rating_average,
-			rating_max as Search_rating_max,
-			rating_min as Search_rating_min,
-			rating_numRaters as Search_rating_numRaters,
-			statistics_favoriteCount as Search_statistics_favoriteCount,
-			statistics_viewCount as Search_statistics_viewCount,
-			rating_numDislikes as Search_rating_numDislikes,
-			rating_numLikes as Search_rating_numLikes,
-			media_category as Search_media_category,
-			duration as Search_duration,
-			aspectRatio as Search_aspectRatio,
-			media_keywords as Search_media_keywords,
-			media_credit as Search_media_credit,
-			media_credit_display as Search_media_credit_display
+			'$(youtubeSearchTerm)' as YouTubeSearchTerm,
+			kind as VideoSearch_kind,
+			videoId as videoId,
+			videoLink as VideoSearch_videoLink,
+			publishedAt as VideoSearch_publishedAt,
+			timestamp#(left(publishedAt, 10) & ' ' & mid(publishedAt, 12, 8), 'YYYY-MM-DD hh:mm:ss') as VideoSearch_publishedAt_qlik_timestamp,
+			date#(left(publishedAt, 10), 'YYYY-MM-DD') as VideoSearch_publishedAt_qlik_date,
+			channelId as VideoSearch_channelId,
+			channelLink as VideoSearch_channelLink,
+			channelTitle as VideoSearch_channelTitle,
+			title as VideoSearch_title,
+			description as VideoSearch_description,
+			thumbnailDefaultUrl as VideoSearch_thumbnailDefaultUrl,
+			liveBroadcastContent as VideoSearch_liveBroadcastContent
 		FROM
-		[http://localhost:5555/QVSource/YouTubeConnectorV2/?table=Search&SearchTerm=$(youtubeSearchTerm)&AdditionalQuery=&appID=$(vQVSourceAppId)&format=qvx]
+		[http://localhost:5555/QVSource/YouTubeConnectorV3/?table=VideoSearch&query=$(youtubeSearchTerm)&appId=$(vQVSourceAppId)]
 		(qvx);
 		
 	NEXT
-	
-//  Commented out for the time being as the value always appears to be empty in the API response (<media:keywords/>)
-//	//Split all the keywords and capitalise them so that Example would be treated the same as eXaMplE
-//	YouTubeKeyWords:
-//	LOAD
-//	    Search_id,
-//	    trim(subfield(Search_media_keywords, ',')) as YouTubeKeyWord
-//	Resident YouTubeConnector_Search;
 	
 	LET noRows = NoOfRows('YouTubeConnector_Search'); // get the total number of rows in the table
 	   
 	for i=0 to $(noRows)-1 // loop through every row
 	
-		let textRaw = peek('videoId',$(i),'YouTubeConnector_Search'); // get the value for "text" field on each row
-	
+		let videoId = peek('videoId',$(i),'YouTubeConnector_Search'); // get the value for "text" field on each row
+			
+		YouTubeConnector_Statistics:
+		LOAD
+			'$(videoId)' as videoId,
+			kind as VideoStatistics_kind,
+			id as VideoStatistics_id,
+			title as VideoStatistics_title,
+			description as VideoStatistics_description,
+			viewCount as VideoStatistics_viewCount,
+			likeCount as VideoStatistics_likeCount,
+			dislikeCount as VideoStatistics_dislikeCount,
+			favoriteCount as VideoStatistics_favoriteCount,
+			commentCount as VideoStatistics_commentCount,
+			duration as VideoStatistics_duration,
+			duration_timespan as VideoStatistics_duration_timespan,
+			duration_total_seconds as VideoStatistics_duration_total_seconds,
+			dimension as VideoStatistics_dimension,
+			definition as VideoStatistics_definition,
+			caption as VideoStatistics_caption,
+			licensedContent as VideoStatistics_licensedContent
+		FROM
+		[http://localhost:5555/QVSource/YouTubeConnectorV3/?table=VideoStatistics&videoIds=$(videoId)&includeContentDetails=true&appId=$(vQVSourceAppId)]
+		(qvx);
+
 		YouTubeConnector_Comments:
 		LOAD
-			'$(textRaw)' as videoId,
-			id as Comments_id,
-			published as Comments_published,
-			date#(left(published, 10) & mid(published, 12, 8), 'YYYY-MM-DDhh:mm:ss') as Comments_published_qvdatetime,
-			date#(left(published, 10), 'YYYY-MM-DD') as Comments_published_qvdate,
-			updated as Comments_updated,
-			date#(left(updated, 10) & mid(updated, 12, 8), 'YYYY-MM-DDhh:mm:ss') as Comments_updated_qvdatetime,
-			date#(left(updated, 10), 'YYYY-MM-DD') as Comments_updated_qvdate,
-			title as Comments_title,
-			title_urlEncoded as Comments_title_urlEncoded,
-			content as Comments_content,
-			content_urlEncoded as Comments_content_urlEncoded,
-			author_name as Comments_author_name,
-			author_uri as Comments_author_uri
+			'$(videoId)' as videoId,
+			id as VideoComments_id,
+			channelId as VideoComments_channelId,
+			videoId as VideoComments_videoId,
+			textDisplay as VideoComments_textDisplay,
+			textDisplay_urlEncoded as VideoComments_textDisplay_urlEncoded,
+			authorDisplayName as VideoComments_authorDisplayName,
+			authorProfileImageUrl as VideoComments_authorProfileImageUrl,
+			authorChannelUrl as VideoComments_authorChannelUrl,
+			authorChannelId as VideoComments_authorChannelId,
+			canRate as VideoComments_canRate,
+			viewerRating as VideoComments_viewerRating,
+			likeCount as VideoComments_likeCount,
+			publishedAt as VideoComments_publishedAt,
+			timestamp#(left(publishedAt, 10) & ' ' & mid(publishedAt, 12, 8), 'YYYY-MM-DD hh:mm:ss') as VideoComments_publishedAt_qlik_timestamp,
+			date#(left(publishedAt, 10), 'YYYY-MM-DD') as VideoComments_publishedAt_qlik_date,
+			updatedAt as VideoComments_updatedAt,
+			timestamp#(left(updatedAt, 10) & ' ' & mid(updatedAt, 12, 8), 'YYYY-MM-DD hh:mm:ss') as VideoComments_updatedAt_qlik_timestamp,
+			date#(left(updatedAt, 10), 'YYYY-MM-DD') as VideoComments_updatedAt_qlik_date,
+			canReply as VideoComments_canReply,
+			totalReplyCount as VideoComments_totalReplyCount,
+			isPublic as VideoComments_isPublic
 		FROM
-		[http://localhost:5555/QVSource/YouTubeConnectorV2/?table=Comments&VideoId=$(textRaw)&appID=$(vQVSourceAppId)&AdditionalQuery=&format=qvx]
+		[http://localhost:5555/QVSource/YouTubeConnectorV3/?table=VideoComments&videoId=$(videoId)&appId=$(vQVSourceAppId)]
 		(qvx);
 	
 	Next
 
 endsub
-///$tab Insights
-sub runInsights
-
-	YouTubeConnector_UserVideos:
-	LOAD
-		id as UserVideos_id,
-		videoId as UserVideos_videoId,
-		published as UserVideos_published,
-		date#(mid(published, 10) & mid(published, 12, 8), 'YYYY-MM-DDhh:mm:ss') as UserVideos_published_qvdatetime,
-		date#(mid(published, 10), 'YYYY-MM-DD') as UserVideos_published_qvdate,
-		updated as UserVideos_updated,
-		date#(mid(updated, 10) & mid(updated, 12, 8), 'YYYY-MM-DDhh:mm:ss') as UserVideos_updated_qvdatetime,
-		date#(mid(updated, 10), 'YYYY-MM-DD') as UserVideos_updated_qvdate,
-		title as UserVideos_title,
-		media_descritption as UserVideos_media_descritption,
-		author_name as UserVideos_author_name,
-		author_uri as UserVideos_author_uri,
-		comments_counthint as UserVideos_comments_counthint,
-		rating_average as UserVideos_rating_average,
-		rating_max as UserVideos_rating_max,
-		rating_min as UserVideos_rating_min,
-		rating_numRaters as UserVideos_rating_numRaters,
-		statistics_favoriteCount as UserVideos_statistics_favoriteCount,
-		statistics_viewCount as UserVideos_statistics_viewCount,
-		rating_numDislikes as UserVideos_rating_numDislikes,
-		rating_numLikes as UserVideos_rating_numLikes,
-		media_category as UserVideos_media_category,
-		duration as UserVideos_duration,
-		aspectRatio as UserVideos_aspectRatio,
-		media_keywords as UserVideos_media_keywords,
-		media_credit as UserVideos_media_credit,
-		media_credit_display as UserVideos_media_credit_display
-	FROM
-	[http://localhost:5555/QVSource/YouTubeConnectorV2/?table=UserVideos&appID=$(vQVSourceAppId)&format=qvx]
-	(qvx);
-		
-	LET noRows = NoOfRows('YouTubeConnector_UserVideos'); // get the total number of rows in the table
-	   
-	for i=0 to $(noRows)-1 // loop through every row
-	
-		let videoId = peek('UserVideos_videoId',$(i),'YouTubeConnector_UserVideos'); // get the value for "text" field on each row
-		
-		YouTubeConnector_Insights_world_locations:
-		LOAD
-			'$(videoId)' as UserVideos_videoId,
-			Date as Insights_world_locations_Date,
-			Region as Insights_world_locations_Region,
-			VideoID as Insights_world_locations_VideoID,
-			Title as Insights_world_locations_Title,
-			[Player location] as [Insights_world_locations_Player location],
-			Detail as Insights_world_locations_Detail,
-			Views as Insights_world_locations_Views
-		FROM
-		[http://localhost:5555/QVSource/YouTubeConnectorV2/?table=Insights_world_locations&appID=$(vQVSourceAppId)&VideoId=$(videoId)&StartDate=$(vInsightsStartDate)&EndDate=$(vInsightsEndDate)&format=qvx]
-		(qvx);
-		
-		
-		YouTubeConnector_Insights_world_referrers:
-		LOAD
-			'$(videoId)' as UserVideos_videoId,
-			Date as Insights_world_referrers_Date,
-			Region as Insights_world_referrers_Region,
-			VideoID as Insights_world_referrers_VideoID,
-			Title as Insights_world_referrers_Title,
-			[Source type] as [Insights_world_referrers_Source type],
-			Detail as Insights_world_referrers_Detail,
-			[Referred views] as [Insights_world_referrers_Referred views]
-		FROM
-		[http://localhost:5555/QVSource/YouTubeConnectorV2/?table=Insights_world_referrers&appID=$(vQVSourceAppId)&VideoId=$(videoId)&StartDate=$(vInsightsStartDate)&EndDate=$(vInsightsEndDate)&format=qvx]
-		(qvx);
-
-		YouTubeConnector_Insights_world_views:
-		LOAD
-			'$(videoId)' as UserVideos_videoId,
-			Date as Insights_world_views_Date,
-			Region as Insights_world_views_Region,
-			VideoID as Insights_world_views_VideoID,
-			Title as Insights_world_views_Title,
-			Views as Insights_world_views_Views,
-			[Unique users] as [Insights_world_views_Unique users],
-			[Unique users (7 days)] as [Insights_world_views_Unique users (7 days)],
-			[Unique users (30 days)] as [Insights_world_views_Unique users (30 days)],
-			Popularity as Insights_world_views_Popularity,
-			Comments as Insights_world_views_Comments,
-			Favorites as Insights_world_views_Favorites,
-			[Rating 1] as [Insights_world_views_Rating 1],
-			[Rating 2] as [Insights_world_views_Rating 2],
-			[Rating 3] as [Insights_world_views_Rating 3],
-			[Rating 4] as [Insights_world_views_Rating 4],
-			[Rating 5] as [Insights_world_views_Rating 5]
-		FROM
-		[http://localhost:5555/QVSource/YouTubeConnectorV2/?table=Insights_world_views&appID=$(vQVSourceAppId)&VideoId=$(videoId)&StartDate=$(vInsightsStartDate)&EndDate=$(vInsightsEndDate)&format=qvx]
-		(qvx);
-
-		YouTubeConnector_Insights_demographics:
-		LOAD
-			'$(videoId)' as UserVideos_videoId,
-			VideoID as Insights_demographics_VideoID,
-			Title as Insights_demographics_Title,
-			Gender as Insights_demographics_Gender,
-			[Age group] as [Insights_demographics_Age group],
-			Percentage as Insights_demographics_Percentage
-		FROM
-		[http://localhost:5555/QVSource/YouTubeConnectorV2/?table=Insights_demographics&appID=$(vQVSourceAppId)&VideoId=$(videoId)&format=qvx]
-		(qvx);
-
-	next
-
-endsub
 ///$tab Main
 if($(vRunSearches) = 1) then
 	call runSearches;
-endif
-
-if($(vGetInsightsData) = 1) then
-	call runInsights;
 endif

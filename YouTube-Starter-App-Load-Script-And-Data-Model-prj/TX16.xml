@@ -215,7 +215,7 @@
       <StateName></StateName>
     </Frame>
     <LegacyHelpModeThatHasNoEffectWhatSoEver>false</LegacyHelpModeThatHasNoEffectWhatSoEver>
-    <TextAdjustHorizontal>0</TextAdjustHorizontal>
+    <TextAdjustHorizontal>1</TextAdjustHorizontal>
     <TextAdjustVertical>0</TextAdjustVertical>
     <TopMargin>10</TopMargin>
     <BottomMargin>10</BottomMargin>
@@ -262,7 +262,7 @@
     <Bmp enctype="base64"></Bmp>
     <BkgAlpha>134</BkgAlpha>
     <Text>
-      <v>This application allows you to analyze YouTube videos based on search terms and also brings back insights data based on videos that you have uploaded.</v>
+      <v>This application allows you to analyze YouTube videos based on search terms.</v>
     </Text>
     <ImageRepresentation></ImageRepresentation>
     <AllowVerticalScrollBar>false</AllowVerticalScrollBar>

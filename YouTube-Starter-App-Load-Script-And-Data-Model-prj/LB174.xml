@@ -246,9 +246,10 @@
     <SuppressSearchHighlight>false</SuppressSearchHighlight>
     <TextColor></TextColor>
     <PreferredTextSearchMode>TEXT_SEARCH_NORMAL</PreferredTextSearchMode>
+    <CellBorders>false</CellBorders>
   </Layout>
   <Def>
-    <Name>Search_published_qvdate</Name>
+    <Name>VideoSearch_publishedAt_qlik_date</Name>
     <Type>PRESENT</Type>
   </Def>
   <Title>
@@ -344,7 +345,7 @@
     <StrDevModeExtra></StrDevModeExtra>
   </PrintSettings>
   <SortCriteria>
-    <SortByState>0</SortByState>
+    <SortByState>1</SortByState>
     <SortByFrequency>0</SortByFrequency>
     <SortByNumeric>-1</SortByNumeric>
     <SortByAscii>0</SortByAscii>

@@ -194,11 +194,11 @@
   <Fields>
     <FieldDefEx>
       <Name>Search_media_descritption</Name>
-      <Type>PRESENT</Type>
+      <Type>NOT_PRESENT</Type>
     </FieldDefEx>
     <FieldDefEx>
       <Name>Search_title</Name>
-      <Type>PRESENT</Type>
+      <Type>NOT_PRESENT</Type>
     </FieldDefEx>
     <FieldDefEx>
       <Name>YouTubeKeyWord</Name>
@@ -206,11 +206,11 @@
     </FieldDefEx>
     <FieldDefEx>
       <Name>Comments_title</Name>
-      <Type>PRESENT</Type>
+      <Type>NOT_PRESENT</Type>
     </FieldDefEx>
     <FieldDefEx>
       <Name>Comments_content</Name>
-      <Type>PRESENT</Type>
+      <Type>NOT_PRESENT</Type>
     </FieldDefEx>
   </Fields>
   <IncludeExcluded>true</IncludeExcluded>

@@ -9,10 +9,6 @@
     <bool>false</bool>
     <bool>false</bool>
     <bool>false</bool>
-    <bool>false</bool>
-    <bool>false</bool>
-    <bool>false</bool>
-    <bool>false</bool>
   </AlwaysLoose>
   <FieldSrcTables>
     <String>6</String>
@@ -65,8 +61,9 @@
     <String>1</String>
     <String>YouTubeConnector_Search</String>
     <String>22</String>
-    <String>2</String>
+    <String>3</String>
     <String>YouTubeConnector_Search</String>
+    <String>YouTubeConnector_Statistics</String>
     <String>YouTubeConnector_Comments</String>
     <String>23</String>
     <String>1</String>
@@ -103,52 +100,52 @@
     <String>YouTubeConnector_Search</String>
     <String>34</String>
     <String>1</String>
-    <String>YouTubeConnector_Search</String>
+    <String>YouTubeConnector_Statistics</String>
     <String>35</String>
     <String>1</String>
-    <String>YouTubeConnector_Search</String>
+    <String>YouTubeConnector_Statistics</String>
     <String>36</String>
     <String>1</String>
-    <String>YouTubeConnector_Search</String>
+    <String>YouTubeConnector_Statistics</String>
     <String>37</String>
     <String>1</String>
-    <String>YouTubeConnector_Search</String>
+    <String>YouTubeConnector_Statistics</String>
     <String>38</String>
     <String>1</String>
-    <String>YouTubeConnector_Search</String>
+    <String>YouTubeConnector_Statistics</String>
     <String>39</String>
     <String>1</String>
-    <String>YouTubeConnector_Search</String>
+    <String>YouTubeConnector_Statistics</String>
     <String>40</String>
     <String>1</String>
-    <String>YouTubeConnector_Search</String>
+    <String>YouTubeConnector_Statistics</String>
     <String>41</String>
     <String>1</String>
-    <String>YouTubeConnector_Search</String>
+    <String>YouTubeConnector_Statistics</String>
     <String>42</String>
     <String>1</String>
-    <String>YouTubeConnector_Search</String>
+    <String>YouTubeConnector_Statistics</String>
     <String>43</String>
     <String>1</String>
-    <String>YouTubeConnector_Search</String>
+    <String>YouTubeConnector_Statistics</String>
     <String>44</String>
     <String>1</String>
-    <String>YouTubeConnector_Search</String>
+    <String>YouTubeConnector_Statistics</String>
     <String>45</String>
     <String>1</String>
-    <String>YouTubeConnector_Search</String>
+    <String>YouTubeConnector_Statistics</String>
     <String>46</String>
     <String>1</String>
-    <String>YouTubeConnector_Search</String>
+    <String>YouTubeConnector_Statistics</String>
     <String>47</String>
     <String>1</String>
-    <String>YouTubeConnector_Search</String>
+    <String>YouTubeConnector_Statistics</String>
     <String>48</String>
     <String>1</String>
-    <String>YouTubeConnector_Comments</String>
+    <String>YouTubeConnector_Statistics</String>
     <String>49</String>
     <String>1</String>
-    <String>YouTubeConnector_Comments</String>
+    <String>YouTubeConnector_Statistics</String>
     <String>50</String>
     <String>1</String>
     <String>YouTubeConnector_Comments</String>
@@ -184,194 +181,34 @@
     <String>YouTubeConnector_Comments</String>
     <String>61</String>
     <String>1</String>
-    <String>YouTubeConnector_UserVideos</String>
+    <String>YouTubeConnector_Comments</String>
     <String>62</String>
-    <String>5</String>
-    <String>YouTubeConnector_UserVideos</String>
-    <String>YouTubeConnector_Insights_world_locations</String>
-    <String>YouTubeConnector_Insights_world_referrers</String>
-    <String>YouTubeConnector_Insights_world_views</String>
-    <String>YouTubeConnector_Insights_demographics</String>
+    <String>1</String>
+    <String>YouTubeConnector_Comments</String>
     <String>63</String>
     <String>1</String>
-    <String>YouTubeConnector_UserVideos</String>
+    <String>YouTubeConnector_Comments</String>
     <String>64</String>
     <String>1</String>
-    <String>YouTubeConnector_UserVideos</String>
+    <String>YouTubeConnector_Comments</String>
     <String>65</String>
     <String>1</String>
-    <String>YouTubeConnector_UserVideos</String>
+    <String>YouTubeConnector_Comments</String>
     <String>66</String>
     <String>1</String>
-    <String>YouTubeConnector_UserVideos</String>
+    <String>YouTubeConnector_Comments</String>
     <String>67</String>
     <String>1</String>
-    <String>YouTubeConnector_UserVideos</String>
+    <String>YouTubeConnector_Comments</String>
     <String>68</String>
     <String>1</String>
-    <String>YouTubeConnector_UserVideos</String>
+    <String>YouTubeConnector_Comments</String>
     <String>69</String>
     <String>1</String>
-    <String>YouTubeConnector_UserVideos</String>
+    <String>YouTubeConnector_Comments</String>
     <String>70</String>
     <String>1</String>
-    <String>YouTubeConnector_UserVideos</String>
-    <String>71</String>
-    <String>1</String>
-    <String>YouTubeConnector_UserVideos</String>
-    <String>72</String>
-    <String>1</String>
-    <String>YouTubeConnector_UserVideos</String>
-    <String>73</String>
-    <String>1</String>
-    <String>YouTubeConnector_UserVideos</String>
-    <String>74</String>
-    <String>1</String>
-    <String>YouTubeConnector_UserVideos</String>
-    <String>75</String>
-    <String>1</String>
-    <String>YouTubeConnector_UserVideos</String>
-    <String>76</String>
-    <String>1</String>
-    <String>YouTubeConnector_UserVideos</String>
-    <String>77</String>
-    <String>1</String>
-    <String>YouTubeConnector_UserVideos</String>
-    <String>78</String>
-    <String>1</String>
-    <String>YouTubeConnector_UserVideos</String>
-    <String>79</String>
-    <String>1</String>
-    <String>YouTubeConnector_UserVideos</String>
-    <String>80</String>
-    <String>1</String>
-    <String>YouTubeConnector_UserVideos</String>
-    <String>81</String>
-    <String>1</String>
-    <String>YouTubeConnector_UserVideos</String>
-    <String>82</String>
-    <String>1</String>
-    <String>YouTubeConnector_UserVideos</String>
-    <String>83</String>
-    <String>1</String>
-    <String>YouTubeConnector_UserVideos</String>
-    <String>84</String>
-    <String>1</String>
-    <String>YouTubeConnector_UserVideos</String>
-    <String>85</String>
-    <String>1</String>
-    <String>YouTubeConnector_UserVideos</String>
-    <String>86</String>
-    <String>1</String>
-    <String>YouTubeConnector_UserVideos</String>
-    <String>87</String>
-    <String>1</String>
-    <String>YouTubeConnector_UserVideos</String>
-    <String>88</String>
-    <String>1</String>
-    <String>YouTubeConnector_Insights_world_locations</String>
-    <String>89</String>
-    <String>1</String>
-    <String>YouTubeConnector_Insights_world_locations</String>
-    <String>90</String>
-    <String>1</String>
-    <String>YouTubeConnector_Insights_world_locations</String>
-    <String>91</String>
-    <String>1</String>
-    <String>YouTubeConnector_Insights_world_locations</String>
-    <String>92</String>
-    <String>1</String>
-    <String>YouTubeConnector_Insights_world_locations</String>
-    <String>93</String>
-    <String>1</String>
-    <String>YouTubeConnector_Insights_world_locations</String>
-    <String>94</String>
-    <String>1</String>
-    <String>YouTubeConnector_Insights_world_locations</String>
-    <String>95</String>
-    <String>1</String>
-    <String>YouTubeConnector_Insights_world_referrers</String>
-    <String>96</String>
-    <String>1</String>
-    <String>YouTubeConnector_Insights_world_referrers</String>
-    <String>97</String>
-    <String>1</String>
-    <String>YouTubeConnector_Insights_world_referrers</String>
-    <String>98</String>
-    <String>1</String>
-    <String>YouTubeConnector_Insights_world_referrers</String>
-    <String>99</String>
-    <String>1</String>
-    <String>YouTubeConnector_Insights_world_referrers</String>
-    <String>100</String>
-    <String>1</String>
-    <String>YouTubeConnector_Insights_world_referrers</String>
-    <String>101</String>
-    <String>1</String>
-    <String>YouTubeConnector_Insights_world_referrers</String>
-    <String>102</String>
-    <String>1</String>
-    <String>YouTubeConnector_Insights_world_views</String>
-    <String>103</String>
-    <String>1</String>
-    <String>YouTubeConnector_Insights_world_views</String>
-    <String>104</String>
-    <String>1</String>
-    <String>YouTubeConnector_Insights_world_views</String>
-    <String>105</String>
-    <String>1</String>
-    <String>YouTubeConnector_Insights_world_views</String>
-    <String>106</String>
-    <String>1</String>
-    <String>YouTubeConnector_Insights_world_views</String>
-    <String>107</String>
-    <String>1</String>
-    <String>YouTubeConnector_Insights_world_views</String>
-    <String>108</String>
-    <String>1</String>
-    <String>YouTubeConnector_Insights_world_views</String>
-    <String>109</String>
-    <String>1</String>
-    <String>YouTubeConnector_Insights_world_views</String>
-    <String>110</String>
-    <String>1</String>
-    <String>YouTubeConnector_Insights_world_views</String>
-    <String>111</String>
-    <String>1</String>
-    <String>YouTubeConnector_Insights_world_views</String>
-    <String>112</String>
-    <String>1</String>
-    <String>YouTubeConnector_Insights_world_views</String>
-    <String>113</String>
-    <String>1</String>
-    <String>YouTubeConnector_Insights_world_views</String>
-    <String>114</String>
-    <String>1</String>
-    <String>YouTubeConnector_Insights_world_views</String>
-    <String>115</String>
-    <String>1</String>
-    <String>YouTubeConnector_Insights_world_views</String>
-    <String>116</String>
-    <String>1</String>
-    <String>YouTubeConnector_Insights_world_views</String>
-    <String>117</String>
-    <String>1</String>
-    <String>YouTubeConnector_Insights_world_views</String>
-    <String>118</String>
-    <String>1</String>
-    <String>YouTubeConnector_Insights_demographics</String>
-    <String>119</String>
-    <String>1</String>
-    <String>YouTubeConnector_Insights_demographics</String>
-    <String>120</String>
-    <String>1</String>
-    <String>YouTubeConnector_Insights_demographics</String>
-    <String>121</String>
-    <String>1</String>
-    <String>YouTubeConnector_Insights_demographics</String>
-    <String>122</String>
-    <String>1</String>
-    <String>YouTubeConnector_Insights_demographics</String>
+    <String>YouTubeConnector_Comments</String>
   </FieldSrcTables>
   <TableViewData>
     <Pos></Pos>
@@ -380,53 +217,17 @@
         <Tables>
           <TableViewTableWinSaveInfo>
             <Pos>
-              <Left>1411</Left>
-              <Top>747</Top>
+              <Left>976</Left>
+              <Top>184</Top>
               <Width>100</Width>
-              <Height>64</Height>
-            </Pos>
-            <Caption>YouTubeSearchTerms</Caption>
-          </TableViewTableWinSaveInfo>
-          <TableViewTableWinSaveInfo>
-            <Pos>
-              <Left>1134</Left>
-              <Top>226</Top>
-              <Width>268</Width>
-              <Height>208</Height>
-            </Pos>
-            <Caption>YouTubeConnector_Search</Caption>
-          </TableViewTableWinSaveInfo>
-          <TableViewTableWinSaveInfo>
-            <Pos>
-              <Left>411</Left>
-              <Top>183</Top>
-              <Width>100</Width>
-              <Height>64</Height>
-            </Pos>
-            <Caption>YouTubeKeyWords</Caption>
-          </TableViewTableWinSaveInfo>
-          <TableViewTableWinSaveInfo>
-            <Pos>
-              <Left>773</Left>
-              <Top>100</Top>
-              <Width>254</Width>
-              <Height>280</Height>
-            </Pos>
-            <Caption>YouTubeConnector_Comments</Caption>
-          </TableViewTableWinSaveInfo>
-          <TableViewTableWinSaveInfo>
-            <Pos>
-              <Left>553</Left>
-              <Top>510</Top>
-              <Width>175</Width>
               <Height>208</Height>
             </Pos>
             <Caption>QVSourceStatus</Caption>
           </TableViewTableWinSaveInfo>
           <TableViewTableWinSaveInfo>
             <Pos>
-              <Left>1102</Left>
-              <Top>490</Top>
+              <Left>979</Left>
+              <Top>467</Top>
               <Width>100</Width>
               <Height>82</Height>
             </Pos>
@@ -434,48 +235,39 @@
           </TableViewTableWinSaveInfo>
           <TableViewTableWinSaveInfo>
             <Pos>
-              <Left>274</Left>
-              <Top>169</Top>
+              <Left>108</Left>
+              <Top>179</Top>
               <Width>100</Width>
+              <Height>64</Height>
+            </Pos>
+            <Caption>YouTubeSearchTerms</Caption>
+          </TableViewTableWinSaveInfo>
+          <TableViewTableWinSaveInfo>
+            <Pos>
+              <Left>259</Left>
+              <Top>121</Top>
+              <Width>201</Width>
               <Height>208</Height>
             </Pos>
-            <Caption>YouTubeConnector_UserVideos</Caption>
+            <Caption>YouTubeConnector_Search</Caption>
           </TableViewTableWinSaveInfo>
           <TableViewTableWinSaveInfo>
             <Pos>
-              <Left>380</Left>
-              <Top>490</Top>
-              <Width>100</Width>
-              <Height>172</Height>
-            </Pos>
-            <Caption>YouTubeConnector_Insights_world_locations</Caption>
-          </TableViewTableWinSaveInfo>
-          <TableViewTableWinSaveInfo>
-            <Pos>
-              <Left>169</Left>
-              <Top>490</Top>
-              <Width>100</Width>
-              <Height>172</Height>
-            </Pos>
-            <Caption>YouTubeConnector_Insights_world_referrers</Caption>
-          </TableViewTableWinSaveInfo>
-          <TableViewTableWinSaveInfo>
-            <Pos>
-              <Left>169</Left>
-              <Top>169</Top>
-              <Width>100</Width>
+              <Left>590</Left>
+              <Top>370</Top>
+              <Width>251</Width>
               <Height>208</Height>
             </Pos>
-            <Caption>YouTubeConnector_Insights_world_views</Caption>
+            <Caption>YouTubeConnector_Statistics</Caption>
           </TableViewTableWinSaveInfo>
           <TableViewTableWinSaveInfo>
             <Pos>
-              <Left>528</Left>
-              <Top>126</Top>
-              <Width>100</Width>
-              <Height>136</Height>
+              <Left>623</Left>
+              <Top>102</Top>
+              <Width>241</Width>
+              <Height>208</Height>
             </Pos>
-            <Caption>YouTubeConnector_Insights_demographics</Caption>
+            <Caption>YouTubeConnector_Comments</Caption>
           </TableViewTableWinSaveInfo>
         </Tables>
         <BroomPoints></BroomPoints>
@@ -487,7 +279,7 @@
     <Mode>0</Mode>
   </TableViewData>
   <Bookmarks></Bookmarks>
-  <SavedByVersion>11.20.12235.0409</SavedByVersion>
+  <SavedByVersion>11.20.12742.0409</SavedByVersion>
   <ForceBackEndMacroExecution>false</ForceBackEndMacroExecution>
   <FieldTags>
     <ScriptBased>
@@ -498,7 +290,6 @@
           <String>$Table</String>
           <String>YouTubeSearchTerm</String>
           <String>videoId</String>
-          <String>UserVideos_videoId</String>
         </FieldNames>
       </FieldTagData>
       <FieldTagData>
@@ -540,54 +331,36 @@
           <String>ConnectorLicensed</String>
           <String>SearchTag</String>
           <String>YouTubeSearchTerm</String>
-          <String>Search_id</String>
+          <String>VideoSearch_kind</String>
           <String>videoId</String>
-          <String>Search_published</String>
-          <String>Search_updated</String>
-          <String>Search_author_uri</String>
-          <String>Search_media_category</String>
-          <String>Search_aspectRatio</String>
-          <String>Search_media_keywords</String>
-          <String>Search_media_credit</String>
-          <String>Comments_id</String>
-          <String>Comments_published</String>
-          <String>Comments_updated</String>
-          <String>Comments_title_urlEncoded</String>
-          <String>Comments_content_urlEncoded</String>
-          <String>Comments_author_uri</String>
-          <String>UserVideos_id</String>
-          <String>UserVideos_videoId</String>
-          <String>UserVideos_published</String>
-          <String>UserVideos_published_qvdatetime</String>
-          <String>UserVideos_published_qvdate</String>
-          <String>UserVideos_updated</String>
-          <String>UserVideos_updated_qvdatetime</String>
-          <String>UserVideos_updated_qvdate</String>
-          <String>UserVideos_title</String>
-          <String>UserVideos_author_name</String>
-          <String>UserVideos_author_uri</String>
-          <String>UserVideos_media_category</String>
-          <String>UserVideos_aspectRatio</String>
-          <String>UserVideos_media_keywords</String>
-          <String>UserVideos_media_credit</String>
-          <String>UserVideos_media_credit_display</String>
-          <String>Insights_world_locations_Region</String>
-          <String>Insights_world_locations_VideoID</String>
-          <String>Insights_world_locations_Title</String>
-          <String>Insights_world_locations_Player location</String>
-          <String>Insights_world_locations_Detail</String>
-          <String>Insights_world_referrers_Region</String>
-          <String>Insights_world_referrers_VideoID</String>
-          <String>Insights_world_referrers_Title</String>
-          <String>Insights_world_referrers_Source type</String>
-          <String>Insights_world_referrers_Detail</String>
-          <String>Insights_world_views_Region</String>
-          <String>Insights_world_views_VideoID</String>
-          <String>Insights_world_views_Title</String>
-          <String>Insights_demographics_VideoID</String>
-          <String>Insights_demographics_Title</String>
-          <String>Insights_demographics_Gender</String>
-          <String>Insights_demographics_Age group</String>
+          <String>VideoSearch_videoLink</String>
+          <String>VideoSearch_publishedAt</String>
+          <String>VideoSearch_channelId</String>
+          <String>VideoSearch_channelLink</String>
+          <String>VideoSearch_channelTitle</String>
+          <String>VideoSearch_thumbnailDefaultUrl</String>
+          <String>VideoSearch_liveBroadcastContent</String>
+          <String>VideoStatistics_kind</String>
+          <String>VideoStatistics_id</String>
+          <String>VideoStatistics_favoriteCount</String>
+          <String>VideoStatistics_duration</String>
+          <String>VideoStatistics_dimension</String>
+          <String>VideoStatistics_definition</String>
+          <String>VideoStatistics_caption</String>
+          <String>VideoStatistics_licensedContent</String>
+          <String>VideoComments_id</String>
+          <String>VideoComments_channelId</String>
+          <String>VideoComments_videoId</String>
+          <String>VideoComments_textDisplay_urlEncoded</String>
+          <String>VideoComments_authorProfileImageUrl</String>
+          <String>VideoComments_authorChannelUrl</String>
+          <String>VideoComments_authorChannelId</String>
+          <String>VideoComments_canRate</String>
+          <String>VideoComments_viewerRating</String>
+          <String>VideoComments_publishedAt</String>
+          <String>VideoComments_updatedAt</String>
+          <String>VideoComments_canReply</String>
+          <String>VideoComments_isPublic</String>
         </FieldNames>
       </FieldTagData>
       <FieldTagData>
@@ -607,62 +380,42 @@
           <String>ConnectorLicensed</String>
           <String>SearchTag</String>
           <String>YouTubeSearchTerm</String>
-          <String>Search_id</String>
+          <String>VideoSearch_kind</String>
           <String>videoId</String>
-          <String>Search_published</String>
-          <String>Search_updated</String>
-          <String>Search_title</String>
-          <String>Search_media_descritption</String>
-          <String>Search_author_name</String>
-          <String>Search_author_uri</String>
-          <String>Search_media_category</String>
-          <String>Search_aspectRatio</String>
-          <String>Search_media_keywords</String>
-          <String>Search_media_credit</String>
-          <String>Search_media_credit_display</String>
-          <String>Comments_id</String>
-          <String>Comments_published</String>
-          <String>Comments_updated</String>
-          <String>Comments_title</String>
-          <String>Comments_title_urlEncoded</String>
-          <String>Comments_content</String>
-          <String>Comments_content_urlEncoded</String>
-          <String>Comments_author_name</String>
-          <String>Comments_author_uri</String>
-          <String>UserVideos_id</String>
-          <String>UserVideos_videoId</String>
-          <String>UserVideos_published</String>
-          <String>UserVideos_published_qvdatetime</String>
-          <String>UserVideos_published_qvdate</String>
-          <String>UserVideos_updated</String>
-          <String>UserVideos_updated_qvdatetime</String>
-          <String>UserVideos_updated_qvdate</String>
-          <String>UserVideos_title</String>
-          <String>UserVideos_media_descritption</String>
-          <String>UserVideos_author_name</String>
-          <String>UserVideos_author_uri</String>
-          <String>UserVideos_media_category</String>
-          <String>UserVideos_aspectRatio</String>
-          <String>UserVideos_media_keywords</String>
-          <String>UserVideos_media_credit</String>
-          <String>UserVideos_media_credit_display</String>
-          <String>Insights_world_locations_Region</String>
-          <String>Insights_world_locations_VideoID</String>
-          <String>Insights_world_locations_Title</String>
-          <String>Insights_world_locations_Player location</String>
-          <String>Insights_world_locations_Detail</String>
-          <String>Insights_world_referrers_Region</String>
-          <String>Insights_world_referrers_VideoID</String>
-          <String>Insights_world_referrers_Title</String>
-          <String>Insights_world_referrers_Source type</String>
-          <String>Insights_world_referrers_Detail</String>
-          <String>Insights_world_views_Region</String>
-          <String>Insights_world_views_VideoID</String>
-          <String>Insights_world_views_Title</String>
-          <String>Insights_demographics_VideoID</String>
-          <String>Insights_demographics_Title</String>
-          <String>Insights_demographics_Gender</String>
-          <String>Insights_demographics_Age group</String>
+          <String>VideoSearch_videoLink</String>
+          <String>VideoSearch_publishedAt</String>
+          <String>VideoSearch_channelId</String>
+          <String>VideoSearch_channelLink</String>
+          <String>VideoSearch_channelTitle</String>
+          <String>VideoSearch_title</String>
+          <String>VideoSearch_description</String>
+          <String>VideoSearch_thumbnailDefaultUrl</String>
+          <String>VideoSearch_liveBroadcastContent</String>
+          <String>VideoStatistics_kind</String>
+          <String>VideoStatistics_id</String>
+          <String>VideoStatistics_title</String>
+          <String>VideoStatistics_description</String>
+          <String>VideoStatistics_favoriteCount</String>
+          <String>VideoStatistics_duration</String>
+          <String>VideoStatistics_dimension</String>
+          <String>VideoStatistics_definition</String>
+          <String>VideoStatistics_caption</String>
+          <String>VideoStatistics_licensedContent</String>
+          <String>VideoComments_id</String>
+          <String>VideoComments_channelId</String>
+          <String>VideoComments_videoId</String>
+          <String>VideoComments_textDisplay</String>
+          <String>VideoComments_textDisplay_urlEncoded</String>
+          <String>VideoComments_authorDisplayName</String>
+          <String>VideoComments_authorProfileImageUrl</String>
+          <String>VideoComments_authorChannelUrl</String>
+          <String>VideoComments_authorChannelId</String>
+          <String>VideoComments_canRate</String>
+          <String>VideoComments_viewerRating</String>
+          <String>VideoComments_publishedAt</String>
+          <String>VideoComments_updatedAt</String>
+          <String>VideoComments_canReply</String>
+          <String>VideoComments_isPublic</String>
         </FieldNames>
       </FieldTagData>
       <FieldTagData>
@@ -675,45 +428,20 @@
           <String>Version_Minor</String>
           <String>Version_Build</String>
           <String>Version_Revision</String>
-          <String>Search_published_qvdatetime</String>
-          <String>Search_published_qvdate</String>
-          <String>Search_updated_qvdatetime</String>
-          <String>Search_updated_qvdate</String>
-          <String>Search_comments_counthint</String>
-          <String>Search_rating_max</String>
-          <String>Search_rating_min</String>
-          <String>Search_rating_numRaters</String>
-          <String>Search_statistics_favoriteCount</String>
-          <String>Search_statistics_viewCount</String>
-          <String>Search_rating_numDislikes</String>
-          <String>Search_rating_numLikes</String>
-          <String>Search_duration</String>
-          <String>Comments_published_qvdatetime</String>
-          <String>Comments_published_qvdate</String>
-          <String>Comments_updated_qvdatetime</String>
-          <String>Comments_updated_qvdate</String>
-          <String>UserVideos_comments_counthint</String>
-          <String>UserVideos_statistics_favoriteCount</String>
-          <String>UserVideos_statistics_viewCount</String>
-          <String>UserVideos_duration</String>
-          <String>Insights_world_locations_Date</String>
-          <String>Insights_world_locations_Views</String>
-          <String>Insights_world_referrers_Date</String>
-          <String>Insights_world_referrers_Referred views</String>
-          <String>Insights_world_views_Date</String>
-          <String>Insights_world_views_Views</String>
-          <String>Insights_world_views_Unique users</String>
-          <String>Insights_world_views_Unique users (7 days)</String>
-          <String>Insights_world_views_Unique users (30 days)</String>
-          <String>Insights_world_views_Popularity</String>
-          <String>Insights_world_views_Comments</String>
-          <String>Insights_world_views_Favorites</String>
-          <String>Insights_world_views_Rating 1</String>
-          <String>Insights_world_views_Rating 2</String>
-          <String>Insights_world_views_Rating 3</String>
-          <String>Insights_world_views_Rating 4</String>
-          <String>Insights_world_views_Rating 5</String>
-          <String>Insights_demographics_Percentage</String>
+          <String>VideoSearch_publishedAt_qlik_timestamp</String>
+          <String>VideoSearch_publishedAt_qlik_date</String>
+          <String>VideoStatistics_viewCount</String>
+          <String>VideoStatistics_likeCount</String>
+          <String>VideoStatistics_dislikeCount</String>
+          <String>VideoStatistics_commentCount</String>
+          <String>VideoStatistics_duration_timespan</String>
+          <String>VideoStatistics_duration_total_seconds</String>
+          <String>VideoComments_likeCount</String>
+          <String>VideoComments_publishedAt_qlik_timestamp</String>
+          <String>VideoComments_publishedAt_qlik_date</String>
+          <String>VideoComments_updatedAt_qlik_timestamp</String>
+          <String>VideoComments_updatedAt_qlik_date</String>
+          <String>VideoComments_totalReplyCount</String>
         </FieldNames>
       </FieldTagData>
       <FieldTagData>
@@ -726,68 +454,35 @@
           <String>Version_Minor</String>
           <String>Version_Build</String>
           <String>Version_Revision</String>
-          <String>Search_published_qvdate</String>
-          <String>Search_updated_qvdate</String>
-          <String>Search_comments_counthint</String>
-          <String>Search_rating_max</String>
-          <String>Search_rating_min</String>
-          <String>Search_rating_numRaters</String>
-          <String>Search_statistics_favoriteCount</String>
-          <String>Search_statistics_viewCount</String>
-          <String>Search_rating_numDislikes</String>
-          <String>Search_rating_numLikes</String>
-          <String>Search_duration</String>
-          <String>Comments_published_qvdate</String>
-          <String>Comments_updated_qvdate</String>
-          <String>UserVideos_comments_counthint</String>
-          <String>UserVideos_statistics_favoriteCount</String>
-          <String>UserVideos_statistics_viewCount</String>
-          <String>UserVideos_duration</String>
-          <String>Insights_world_locations_Date</String>
-          <String>Insights_world_locations_Views</String>
-          <String>Insights_world_referrers_Date</String>
-          <String>Insights_world_referrers_Referred views</String>
-          <String>Insights_world_views_Date</String>
-          <String>Insights_world_views_Views</String>
-          <String>Insights_world_views_Unique users</String>
-          <String>Insights_world_views_Unique users (7 days)</String>
-          <String>Insights_world_views_Unique users (30 days)</String>
-          <String>Insights_world_views_Popularity</String>
-          <String>Insights_world_views_Comments</String>
-          <String>Insights_world_views_Favorites</String>
-          <String>Insights_world_views_Rating 1</String>
-          <String>Insights_world_views_Rating 2</String>
-          <String>Insights_world_views_Rating 3</String>
-          <String>Insights_world_views_Rating 4</String>
-          <String>Insights_world_views_Rating 5</String>
+          <String>VideoSearch_publishedAt_qlik_date</String>
+          <String>VideoStatistics_viewCount</String>
+          <String>VideoStatistics_likeCount</String>
+          <String>VideoStatistics_dislikeCount</String>
+          <String>VideoStatistics_commentCount</String>
+          <String>VideoStatistics_duration_total_seconds</String>
+          <String>VideoComments_likeCount</String>
+          <String>VideoComments_publishedAt_qlik_date</String>
+          <String>VideoComments_updatedAt_qlik_date</String>
+          <String>VideoComments_totalReplyCount</String>
         </FieldNames>
       </FieldTagData>
       <FieldTagData>
         <Tag>$timestamp</Tag>
         <FieldNames>
-          <String>Search_published_qvdatetime</String>
-          <String>Search_published_qvdate</String>
-          <String>Search_updated_qvdatetime</String>
-          <String>Search_updated_qvdate</String>
-          <String>Comments_published_qvdatetime</String>
-          <String>Comments_published_qvdate</String>
-          <String>Comments_updated_qvdatetime</String>
-          <String>Comments_updated_qvdate</String>
-          <String>Insights_world_locations_Date</String>
-          <String>Insights_world_referrers_Date</String>
-          <String>Insights_world_views_Date</String>
+          <String>VideoSearch_publishedAt_qlik_timestamp</String>
+          <String>VideoSearch_publishedAt_qlik_date</String>
+          <String>VideoComments_publishedAt_qlik_timestamp</String>
+          <String>VideoComments_publishedAt_qlik_date</String>
+          <String>VideoComments_updatedAt_qlik_timestamp</String>
+          <String>VideoComments_updatedAt_qlik_date</String>
         </FieldNames>
       </FieldTagData>
       <FieldTagData>
         <Tag>$date</Tag>
         <FieldNames>
-          <String>Search_published_qvdate</String>
-          <String>Search_updated_qvdate</String>
-          <String>Comments_published_qvdate</String>
-          <String>Comments_updated_qvdate</String>
-          <String>Insights_world_locations_Date</String>
-          <String>Insights_world_referrers_Date</String>
-          <String>Insights_world_views_Date</String>
+          <String>VideoSearch_publishedAt_qlik_date</String>
+          <String>VideoComments_publishedAt_qlik_date</String>
+          <String>VideoComments_updatedAt_qlik_date</String>
         </FieldNames>
       </FieldTagData>
     </ScriptBased>

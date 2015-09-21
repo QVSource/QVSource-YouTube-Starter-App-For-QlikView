@@ -246,10 +246,11 @@
     <SuppressSearchHighlight>false</SuppressSearchHighlight>
     <TextColor></TextColor>
     <PreferredTextSearchMode>TEXT_SEARCH_NORMAL</PreferredTextSearchMode>
+    <CellBorders>false</CellBorders>
   </Layout>
   <Def>
     <Name>Insights_world_referrers_Source type</Name>
-    <Type>PRESENT</Type>
+    <Type>NOT_PRESENT</Type>
   </Def>
   <Title>
     <v>Source Type</v>

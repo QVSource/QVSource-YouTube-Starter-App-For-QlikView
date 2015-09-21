@@ -246,10 +246,11 @@
     <SuppressSearchHighlight>false</SuppressSearchHighlight>
     <TextColor></TextColor>
     <PreferredTextSearchMode>TEXT_SEARCH_NORMAL</PreferredTextSearchMode>
+    <CellBorders>false</CellBorders>
   </Layout>
   <Def>
     <Name>Insights_world_locations_Player location</Name>
-    <Type>PRESENT</Type>
+    <Type>NOT_PRESENT</Type>
   </Def>
   <Title>
     <v>Location</v>
