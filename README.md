@@ -46,5 +46,3 @@ Some ideas which would improve this application.
 * Accumulate results into QVD file(s).
 * Download comments using the new Async feature (http://www.qvsource.com/wiki/Synchronous-Asynchronous-And-Batch-Requests-Explained.ashx).
 * Add sentimnent analysis.
-* Add automatic pagination through blocks of insights results (because you can currently only specify a single time span of no more than 31 days).
-* Add Channel Insights tables.
