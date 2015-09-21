@@ -38,7 +38,7 @@
         <DropShadow>false</DropShadow>
       </CaptionFont>
       <Name>
-        <v>Video Lengths</v>
+        <v>Number of videos by duration</v>
       </Name>
       <Bmp enctype="base64"></Bmp>
       <BmpMode>0</BmpMode>
@@ -210,7 +210,7 @@
     <ReadOnly>false</ReadOnly>
     <FastChange></FastChange>
     <WindowTitle>
-      <v>Video Lengths</v>
+      <v>Number of videos by duration</v>
     </WindowTitle>
     <GraphMode>GRAPH_MODE_BAR</GraphMode>
     <TotalString></TotalString>
@@ -220,8 +220,7 @@
   <_ExpressionDatas>
     <ExpressionData>
       <Definition>
-        <v>sum(Search_statistics_viewCount)
-// Count(Search_duration)</v>
+        <v>Count(VideoStatistics_id)</v>
       </Definition>
       <Enable>true</Enable>
       <Present>false</Present>
@@ -625,11 +624,11 @@
   <Dimensions>
     <ChartDimensionDataDef>
       <PseudoDef>
-        <Name>=floor(Search_duration/60)</Name>
+        <Name>=Floor(VideoStatistics_duration_total_seconds/60)</Name>
         <Type>IS_EXPR</Type>
       </PseudoDef>
       <Title>
-        <v>Seconds</v>
+        <v>Duration in minutes</v>
       </Title>
       <TotalString></TotalString>
       <SortCriteria>
@@ -641,7 +640,7 @@
         <SortByExpression>0</SortByExpression>
         <Expression></Expression>
       </SortCriteria>
-      <ShowAll>true</ShowAll>
+      <ShowAll>false</ShowAll>
       <ShowLabel>true</ShowLabel>
       <ShowLegend>true</ShowLegend>
       <NullSuppression>false</NullSuppression>
@@ -781,7 +780,9 @@
       <MaxStringLength>0</MaxStringLength>
       <AttributeExpressions></AttributeExpressions>
       <PageBreaks>NO_BREAKS</PageBreaks>
-      <MaxNumShown></MaxNumShown>
+      <MaxNumShown>
+        <v>9</v>
+      </MaxNumShown>
       <Spacing></Spacing>
       <ColWidth>300</ColWidth>
       <OverrideGroupSort>false</OverrideGroupSort>
@@ -790,15 +791,19 @@
       <Comment></Comment>
       <OtherTotalSpec>
         <OtherMode>OTHER_OFF</OtherMode>
-        <OtherCounted></OtherCounted>
-        <OtherLimit></OtherLimit>
+        <OtherCounted>
+          <v>20</v>
+        </OtherCounted>
+        <OtherLimit>
+          <v>0.05</v>
+        </OtherLimit>
         <OtherLimitMode>OTHER_GT_LIMIT</OtherLimitMode>
-        <SuppressOther>true</SuppressOther>
+        <SuppressOther>false</SuppressOther>
         <ForceBadValueKeeping>true</ForceBadValueKeeping>
         <ApplyEvenWhenPossiblyWrongResult>true</ApplyEvenWhenPossiblyWrongResult>
         <GlobalOtherGrouping>false</GlobalOtherGrouping>
         <OtherCollapseInnerDimensions>false</OtherCollapseInnerDimensions>
-        <OtherSortMode>OTHER_SORT_DEFAULT</OtherSortMode>
+        <OtherSortMode>OTHER_SORT_DESCENDING</OtherSortMode>
         <TotalMode>TOTAL_OFF</TotalMode>
         <ReferencedExpression></ReferencedExpression>
       </OtherTotalSpec>
@@ -1000,7 +1005,7 @@
       <RelativePosition></RelativePosition>
       <RelativePositionType>0</RelativePositionType>
       <Transparent>true</Transparent>
-      <Show>true</Show>
+      <Show>false</Show>
       <DockedPosition>POSITION_TOP</DockedPosition>
       <BgColor>
         <Mode>COLORAREA_SOLID</Mode>
@@ -1274,15 +1279,15 @@
     <TrendLineWidth>5</TrendLineWidth>
     <ColorMap>
       <ColorAreaDef>
-        <Mode>COLORAREA_SOLID</Mode>
+        <Mode>COLORAREA_SINGLE_COLOR</Mode>
         <Luminosity>85</Luminosity>
         <FillDirection>COLORAREA_HORZ</FillDirection>
         <FillPattern>COLORAREA_PATTERN1</FillPattern>
         <PrimaryCol>
           <Col>
-            <Red>141</Red>
-            <Green>170</Green>
-            <Blue>203</Blue>
+            <Red>0</Red>
+            <Green>0</Green>
+            <Blue>255</Blue>
             <Alpha>255</Alpha>
           </Col>
           <IsCalculated>false</IsCalculated>
@@ -1597,6 +1602,8 @@
         <SecondaryCol></SecondaryCol>
         <Alpha>255</Alpha>
       </ColorAreaDef>
+      <ColorAreaDef></ColorAreaDef>
+      <ColorAreaDef></ColorAreaDef>
     </ColorMap>
     <MaxNumbersShownInChart>100</MaxNumbersShownInChart>
     <LeftAxisPosition>
@@ -1916,6 +1923,9 @@
     <TrellisProperties></TrellisProperties>
     <MekkoChartMode>MEKKOCHART_NORMALIZED</MekkoChartMode>
     <TruncateLabel>true</TruncateLabel>
+    <ScaleChartSizeRects></ScaleChartSizeRects>
+    <FastChangeRefSizeRect></FastChangeRefSizeRect>
+    <PieChartSectorOutlineColor></PieChartSectorOutlineColor>
   </ChartProperties>
   <TableProperties>
     <VerticalLabels>false</VerticalLabels>
@@ -2416,8 +2426,8 @@
     </DefaultExprCellVariations>
     <StraightShowOthers>false</StraightShowOthers>
     <InterFieldSortOrder>
-      <int>0</int>
       <int>1</int>
+      <int>0</int>
     </InterFieldSortOrder>
     <ExpressionPosition>1</ExpressionPosition>
     <NumberOfLeftDimensions>1</NumberOfLeftDimensions>
@@ -2450,7 +2460,7 @@
       <ExpansionData>
         <ExcludeList>false</ExcludeList>
         <Pos>
-          <DimName>=floor(Search_duration/60)</DimName>
+          <DimName>=Floor(VideoStatistics_duration_total_seconds/60)</DimName>
           <ElemNo></ElemNo>
           <ElemValues></ElemValues>
         </Pos>
@@ -2467,8 +2477,7 @@
           <InternalId>-1</InternalId>
           <ExpressionData>
             <Definition>
-              <v>sum(Search_statistics_viewCount)
-// Count(Search_duration)</v>
+              <v>Count(VideoStatistics_id)</v>
             </Definition>
             <Enable>true</Enable>
             <Present>false</Present>

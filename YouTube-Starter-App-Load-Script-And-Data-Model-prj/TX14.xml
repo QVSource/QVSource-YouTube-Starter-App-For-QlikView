@@ -262,7 +262,7 @@
     <Bmp enctype="base64"></Bmp>
     <BkgAlpha>134</BkgAlpha>
     <Text>
-      <v>Click here to see how to load this application with your own data</v>
+      <v>Click here to see how to load this application with your own data.</v>
     </Text>
     <ImageRepresentation></ImageRepresentation>
     <AllowVerticalScrollBar>false</AllowVerticalScrollBar>

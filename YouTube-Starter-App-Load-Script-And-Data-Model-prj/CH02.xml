@@ -38,7 +38,7 @@
         <DropShadow>false</DropShadow>
       </CaptionFont>
       <Name>
-        <v>Number of uploaded Videos over time</v>
+        <v>Number of published videos over time</v>
       </Name>
       <Bmp enctype="base64"></Bmp>
       <BmpMode>0</BmpMode>
@@ -210,7 +210,7 @@
     <ReadOnly>false</ReadOnly>
     <FastChange></FastChange>
     <WindowTitle>
-      <v>Number of uploaded Videos over time</v>
+      <v>Number of published videos over time</v>
     </WindowTitle>
     <GraphMode>GRAPH_MODE_LINE</GraphMode>
     <TotalString></TotalString>
@@ -220,7 +220,7 @@
   <_ExpressionDatas>
     <ExpressionData>
       <Definition>
-        <v>Count(Search_id)</v>
+        <v>Count(videoId)</v>
       </Definition>
       <Enable>true</Enable>
       <Present>false</Present>
@@ -622,16 +622,18 @@
   <Dimensions>
     <ChartDimensionDataDef>
       <PseudoDef>
-        <Name>Search_published_qvdate</Name>
+        <Name>VideoSearch_publishedAt_qlik_date</Name>
         <Type>PRESENT</Type>
       </PseudoDef>
-      <Title></Title>
+      <Title>
+        <v>Published date</v>
+      </Title>
       <TotalString></TotalString>
       <SortCriteria>
-        <SortByState>0</SortByState>
+        <SortByState>1</SortByState>
         <SortByFrequency>0</SortByFrequency>
-        <SortByNumeric>0</SortByNumeric>
-        <SortByAscii>1</SortByAscii>
+        <SortByNumeric>1</SortByNumeric>
+        <SortByAscii>0</SortByAscii>
         <SortByLoadOrder>0</SortByLoadOrder>
         <SortByExpression>0</SortByExpression>
         <Expression></Expression>
@@ -1273,15 +1275,15 @@
     <TrendLineWidth>5</TrendLineWidth>
     <ColorMap>
       <ColorAreaDef>
-        <Mode>COLORAREA_SOLID</Mode>
+        <Mode>COLORAREA_SINGLE_COLOR</Mode>
         <Luminosity>85</Luminosity>
         <FillDirection>COLORAREA_HORZ</FillDirection>
         <FillPattern>COLORAREA_PATTERN1</FillPattern>
         <PrimaryCol>
           <Col>
-            <Red>141</Red>
-            <Green>170</Green>
-            <Blue>203</Blue>
+            <Red>255</Red>
+            <Green>0</Green>
+            <Blue>0</Blue>
             <Alpha>255</Alpha>
           </Col>
           <IsCalculated>false</IsCalculated>
@@ -1596,6 +1598,8 @@
         <SecondaryCol></SecondaryCol>
         <Alpha>255</Alpha>
       </ColorAreaDef>
+      <ColorAreaDef></ColorAreaDef>
+      <ColorAreaDef></ColorAreaDef>
     </ColorMap>
     <MaxNumbersShownInChart>100</MaxNumbersShownInChart>
     <LeftAxisPosition>
@@ -1915,6 +1919,9 @@
     <TrellisProperties></TrellisProperties>
     <MekkoChartMode>MEKKOCHART_NORMALIZED</MekkoChartMode>
     <TruncateLabel>true</TruncateLabel>
+    <ScaleChartSizeRects></ScaleChartSizeRects>
+    <FastChangeRefSizeRect></FastChangeRefSizeRect>
+    <PieChartSectorOutlineColor></PieChartSectorOutlineColor>
   </ChartProperties>
   <TableProperties>
     <VerticalLabels>false</VerticalLabels>
@@ -2449,7 +2456,7 @@
       <ExpansionData>
         <ExcludeList>false</ExcludeList>
         <Pos>
-          <DimName>Search_published_qvdate</DimName>
+          <DimName>VideoSearch_publishedAt_qlik_date</DimName>
           <ElemNo></ElemNo>
           <ElemValues></ElemValues>
         </Pos>
@@ -2466,7 +2473,7 @@
           <InternalId>-1</InternalId>
           <ExpressionData>
             <Definition>
-              <v>Count(Search_id)</v>
+              <v>Count(videoId)</v>
             </Definition>
             <Enable>true</Enable>
             <Present>false</Present>
