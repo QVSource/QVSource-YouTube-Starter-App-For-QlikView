@@ -3,7 +3,7 @@
   <SaveCompressed>0</SaveCompressed>
   <UsePassiveFtp>false</UsePassiveFtp>
   <IgnoreInfoLost>false</IgnoreInfoLost>
-  <GenerateLogfile>false</GenerateLogfile>
+  <GenerateLogfile>true</GenerateLogfile>
   <OpeningExec></OpeningExec>
   <OpenPicTimeout>0</OpenPicTimeout>
   <OpenPicCloseOnClick>0</OpenPicCloseOnClick>
