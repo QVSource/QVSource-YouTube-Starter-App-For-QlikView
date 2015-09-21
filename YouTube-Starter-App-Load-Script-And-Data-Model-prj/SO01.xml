@@ -193,24 +193,16 @@
   <FieldsExpression></FieldsExpression>
   <Fields>
     <FieldDefEx>
-      <Name>Search_media_descritption</Name>
-      <Type>NOT_PRESENT</Type>
+      <Name>VideoSearch_title</Name>
+      <Type>PRESENT</Type>
     </FieldDefEx>
     <FieldDefEx>
-      <Name>Search_title</Name>
-      <Type>NOT_PRESENT</Type>
+      <Name>VideoSearch_description</Name>
+      <Type>PRESENT</Type>
     </FieldDefEx>
     <FieldDefEx>
-      <Name>YouTubeKeyWord</Name>
-      <Type>NOT_PRESENT</Type>
-    </FieldDefEx>
-    <FieldDefEx>
-      <Name>Comments_title</Name>
-      <Type>NOT_PRESENT</Type>
-    </FieldDefEx>
-    <FieldDefEx>
-      <Name>Comments_content</Name>
-      <Type>NOT_PRESENT</Type>
+      <Name>VideoComments_textDisplay</Name>
+      <Type>PRESENT</Type>
     </FieldDefEx>
   </Fields>
   <IncludeExcluded>true</IncludeExcluded>
