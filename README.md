@@ -12,6 +12,8 @@ If you are a QlikView (or Qlik Sense) + QVSource user you can simply click the [
 
 The content below is copied from the change log in the first tab of the load script.
 
+Change Log
+----------
 1.6.0 - 21/09/15
 ----------------
 * Updated to use Connector V3.
