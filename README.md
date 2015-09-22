@@ -6,7 +6,7 @@ This is a starter QlikView application showing how to get started using the [QVS
 
 Full documentation for this starter application can be found [here](http://wiki.qvsource.com/YouTube-Connector-For-QlikView-Demo.ashx).
 
-If you are a QlikView + QVSource user you can simply click the ["Download ZIP"] (https://github.com/QVSource/QVSource-YouTube-Starter-App-For-QlikView/archive/master.zip) button on GitHub to grab this application.
+If you are a QlikView (or Qlik Sense) + QVSource user you can simply click the ["Download ZIP"] (https://github.com/QVSource/QVSource-YouTube-Starter-App-For-QlikView/archive/master.zip) button on GitHub to grab this application.
 
 ![](Screenshot1.png)
 
